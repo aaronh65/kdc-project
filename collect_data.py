@@ -19,6 +19,7 @@ def rollout(env, args, idx):
     while not done:
         img = env.render(mode='rgb_array')
         action = env.action_space.sample()
+        obs['action'] = action
         new_obs, reward, done, info = env.step(action)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         
