@@ -27,7 +27,7 @@ def rollout(env, args, idx):
             path = save_root / key
             if not path.exists():
                 path.mkdir(parents=True, exist_ok=False)
-            with open(path / f'{step:06d}.png', 'wb') as f:
+            with open(path / f'{step:06d}.npy', 'wb') as f:
                 np.save(f, item)
 
         step += 1
